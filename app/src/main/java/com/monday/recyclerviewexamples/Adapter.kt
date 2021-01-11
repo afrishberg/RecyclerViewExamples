@@ -16,7 +16,7 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dataItem = data[position]
-        holder.textView.text = dataItem.number.toString()
+        holder.textView.text = dataItem.id.toString()
         holder.textView.animate().rotation(
             if (dataItem.rotated) 180.0f else 0.0f
         ).setDuration(400).start()

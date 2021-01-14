@@ -22,10 +22,6 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
         ).setDuration(400).start()
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int, payloads: MutableList<Any>) {
-        super.onBindViewHolder(holder, position, payloads)
-    }
-
     override fun getItemCount(): Int {
         return data.size
     }

@@ -43,7 +43,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun flipRotation(adapter: Adapter) {
-        adapter.data[0].rotated = adapter.data[0].rotated.not()
+        val newList = adapter.data.mapIndexed { i, data ->
+            if (i == 0) data.copy(rotated = data.rotated.not()) else data
+        }
+        adapter.data = newList
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {

@@ -28,10 +28,10 @@ class DiffUtilMainActivity : AppCompatActivity() {
     }
 
     private fun flipRotation(adapter: DiffListAdapter) {
-        val mapIndexed = adapter.currentList.mapIndexed { i, data ->
+        val newList = adapter.currentList.mapIndexed { i, data ->
             if (i == 0) data.copy(rotated = data.rotated.not()) else data
         }
-        adapter.submitList(mapIndexed)
+        adapter.submitList(newList)
     }
 
 
